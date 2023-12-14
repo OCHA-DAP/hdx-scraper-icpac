@@ -1,1 +1,1 @@
-git+ssh://git@github.com/OCHA-DAP/hdx-scraper-geonode@icpac_changes#egg=hdx-scraper-geonode
+hdx-scraper-geonode==1.5.3

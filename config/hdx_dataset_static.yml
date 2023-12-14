@@ -1,8 +1,7 @@
-license_id: "hdx-other"
-license_other: "Placeholder"
-caveats: "Placeholder"
+license_id: "cc-by"
+caveats: ""
 methodology: "Other"
-methodology_other: "Placeholder"
+methodology_other: "Inquire via disaster-risk-management@igad.int"
 dataset_source: "ICPAC"
 package_creator: "mcarans"
 private: False

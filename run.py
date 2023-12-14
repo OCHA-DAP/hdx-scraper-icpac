@@ -39,6 +39,7 @@ def delete_from_hdx(dataset: Dataset) -> None:
         showcase.delete_from_hdx()
     dataset.delete_from_hdx()
 
+
 def main():
     """Generate dataset and create it in HDX"""
 
