@@ -1,6 +1,6 @@
 ### Collector for ICPAC's Datasets
 
-This script connects to the [ICPAC API](https://geonode.themimu.info/layers/) and extracts data layer by layer creating a dataset per layer in HDX. It makes 1 read from MIMU and 250 read/writes (API calls) to HDX in a one hour period. It is run every year.
+This script connects to the [ICPAC API](https://geonode.themimu.info/layers/) and extracts data layer by layer creating a dataset per layer in HDX. It makes 1 read from ICPAC and 250 read/writes (API calls) to HDX in a one hour period. It is run every month.
 
 ### Usage
 python run.py
