@@ -43,7 +43,7 @@ def delete_from_hdx(dataset: Dataset) -> None:
 def main():
     """Generate dataset and create it in HDX"""
 
-    with Download() as downloader:
+    with Download(verify=False) as downloader:
         configuration = Configuration.read()
         base_url = configuration["base_url"]
         geonodetohdx = GeoNodeToHDX(base_url, downloader)
@@ -61,7 +61,7 @@ def main():
 if __name__ == "__main__":
     facade(
         main,
-        user_agent_config_yaml=join(expanduser("~"), ".useragents.yml"),
+        user_agent_config_yaml=join(expanduser("~"), ".useragents.yaml"),
         user_agent_lookup=lookup,
         project_config_yaml=join("config", "project_configuration.yml"),
     )
