@@ -43,7 +43,7 @@ def delete_from_hdx(dataset: Dataset) -> None:
 def main():
     """Generate dataset and create it in HDX"""
 
-    with Download(verify=False) as downloader:
+    with Download() as downloader:
         configuration = Configuration.read()
         base_url = configuration["base_url"]
         geonodetohdx = GeoNodeToHDX(base_url, downloader)
