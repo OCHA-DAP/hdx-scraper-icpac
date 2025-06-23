@@ -28,6 +28,7 @@ jobs:
         HDX_KEY: ${{ secrets.HDX_BOT_SCRAPERS_API_TOKEN }}
         PREPREFIX: ${{ vars.HDX_USER_AGENT_PREPREFIX }}
         USER_AGENT: ${{ vars.USER_AGENT }}
+        VERIFY_SSL: ${{ vars.VERIFY_SSL }}
       run: |
         python -m hdx.scraper.icpac
     - name: Send mail
