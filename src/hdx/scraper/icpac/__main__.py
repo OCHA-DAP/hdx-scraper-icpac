@@ -87,7 +87,7 @@ def main(verify_ssl: Optional[str] = None):
     }
     User.check_current_user_write_access(metadata["orgid"], configuration=configuration)
     if verify_ssl is None:
-        verify_ssl = getenv("VERIFYSSL", "Y")
+        verify_ssl = getenv("VERIFY_SSL", "Y")
     if verify_ssl.lower() in ("false", "n", ""):
         verify_ssl = False
         logger.info("SSL certificate verification is disabled!")
