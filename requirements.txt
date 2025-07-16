@@ -8,7 +8,7 @@ attrs==25.3.0
     #   jsonlines
     #   jsonschema
     #   referencing
-certifi==2025.6.15
+certifi==2025.7.14
     # via requests
 chardet==5.2.0
     # via frictionless
@@ -38,18 +38,18 @@ hdx-python-api==6.4.5
     # via
     #   hdx-scraper-icpac (pyproject.toml)
     #   hdx-scraper-geonode
-hdx-python-country==3.9.4
+hdx-python-country==3.9.6
     # via
     #   hdx-scraper-icpac (pyproject.toml)
     #   hdx-python-api
     #   hdx-scraper-geonode
-hdx-python-utilities==3.8.7
+hdx-python-utilities==3.8.8
     # via
     #   hdx-scraper-icpac (pyproject.toml)
     #   hdx-python-api
     #   hdx-python-country
     #   hdx-scraper-geonode
-hdx-scraper-geonode==1.5.4
+hdx-scraper-geonode==1.5.5
     # via hdx-scraper-icpac (pyproject.toml)
 humanize==4.12.3
     # via frictionless
@@ -97,7 +97,7 @@ num2words==0.5.14
     # via quantulum3
 openpyxl==3.1.5
     # via hdx-python-utilities
-petl==1.7.16
+petl==1.7.17
     # via frictionless
 ply==3.11
     # via
@@ -150,7 +150,7 @@ rfc3986==2.0.0
     # via frictionless
 rich==14.0.0
     # via typer
-rpds-py==0.25.1
+rpds-py==0.26.0
     # via
     #   jsonschema
     #   referencing
@@ -188,7 +188,7 @@ typeguard==4.4.4
     # via inflect
 typer==0.16.0
     # via frictionless
-typing-extensions==4.14.0
+typing-extensions==4.14.1
     # via
     #   frictionless
     #   pydantic

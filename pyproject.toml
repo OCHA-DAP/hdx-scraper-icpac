@@ -10,10 +10,10 @@ build-backend = "hatchling.build"
 name = "hdx-scraper-icpac"
 requires-python = ">=3.13"
 dependencies = [
-    "hdx-scraper-geonode>= 1.5.4",
+    "hdx-scraper-geonode>= 1.5.5",
     "hdx-python-api>= 6.4.5",
-    "hdx-python-country>= 3.9.4",
-    "hdx-python-utilities>= 3.8.7",
+    "hdx-python-country>= 3.9.6",
+    "hdx-python-utilities>= 3.8.8",
 ]
 dynamic = ["version"]
 
