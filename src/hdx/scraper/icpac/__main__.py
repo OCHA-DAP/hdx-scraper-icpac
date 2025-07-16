@@ -17,7 +17,8 @@ from hdx.facades.infer_arguments import facade
 from hdx.scraper.geonode.geonodetohdx import GeoNodeToHDX
 from hdx.scraper.icpac._version import __version__
 from hdx.utilities.downloader import Download
-from hdx.utilities.path import script_dir_plus_file
+from hdx.utilities.path import script_dir_plus_file, wheretostart_tempdir_batch
+from hdx.utilities.retriever import Retrieve
 
 logger = logging.getLogger(__name__)
 
@@ -70,10 +71,12 @@ def delete_from_hdx(dataset: Dataset) -> None:
     dataset.delete_from_hdx()
 
 
-def main(verify_ssl: Optional[str] = None):
+def main(save: bool = False, use_saved: bool = False, verify_ssl: Optional[str] = None):
     """Generate dataset and create it in HDX
 
     Args:
+        save (bool): Save downloaded data. Defaults to False.
+        use_saved (bool): Use saved data. Defaults to False.
         verify_ssl (Optional[str]): Whether to verify SSL certificates. Defaults to None (verify).
 
     Returns:
@@ -93,17 +96,22 @@ def main(verify_ssl: Optional[str] = None):
         logger.info("SSL certificate verification is disabled!")
     else:
         verify_ssl = True
-    with Download(verify=verify_ssl) as downloader:
-        base_url = configuration["base_url"]
-        geonodetohdx = GeoNodeToHDX(base_url, downloader)
-        datasets = geonodetohdx.generate_datasets_and_showcases(
-            metadata,
-            create_dataset_showcase=create_dataset_showcase,
-            use_count=False,
-            process_dataset_name=process_dataset_name,
-            updated_by_script="HDX Scraper: ICPAC",
-        )
-        geonodetohdx.delete_other_datasets(datasets, metadata)
+    with wheretostart_tempdir_batch(lookup) as info:
+        folder = info["folder"]
+        with Download(verify=verify_ssl) as downloader:
+            retriever = Retrieve(
+                downloader, folder, "saved_data", folder, save, use_saved
+            )
+            base_url = configuration["base_url"]
+            geonodetohdx = GeoNodeToHDX(base_url, retriever)
+            datasets = geonodetohdx.generate_datasets_and_showcases(
+                metadata,
+                create_dataset_showcase=create_dataset_showcase,
+                use_count=False,
+                process_dataset_name=process_dataset_name,
+                updated_by_script="HDX Scraper: ICPAC",
+            )
+            geonodetohdx.delete_other_datasets(datasets, metadata)
 
 
 if __name__ == "__main__":
