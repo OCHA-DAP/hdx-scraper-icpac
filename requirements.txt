@@ -51,7 +51,7 @@ hdx-python-utilities==4.0.8
     #   hdx-python-api
     #   hdx-python-country
     #   hdx-scraper-geonode
-hdx-scraper-geonode==1.5.8
+hdx-scraper-geonode==1.5.9
     # via hdx-scraper-icpac (pyproject.toml)
 humanize==4.15.0
     # via frictionless
@@ -118,7 +118,7 @@ pyyaml==6.0.3
     # via
     #   frictionless
     #   tableschema-to-template
-quantulum3==0.9.2
+quantulum3==0.10.0
     # via hdx-scraper-geonode
 ratelimit==2.2.1
     # via hdx-python-utilities

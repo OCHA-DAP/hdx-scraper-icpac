@@ -84,7 +84,7 @@ hdx-python-utilities==4.0.8
     #   hdx-python-api
     #   hdx-python-country
     #   hdx-scraper-geonode
-hdx-scraper-geonode==1.5.8
+hdx-scraper-geonode==1.5.9
     # via
     #   -c requirements.txt
     #   hdx-scraper-icpac (pyproject.toml)
@@ -220,7 +220,7 @@ pyyaml==6.0.3
     #   -c requirements.txt
     #   frictionless
     #   tableschema-to-template
-quantulum3==0.9.2
+quantulum3==0.10.0
     # via
     #   -c requirements.txt
     #   hdx-scraper-geonode
