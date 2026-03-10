@@ -47,7 +47,7 @@ def create_dataset_showcase(
     dataset.update_from_yaml(
         script_dir_plus_file(join("config", "hdx_dataset_static.yaml"), main)
     )
-    dataset.create_in_hdx(remove_additional_resources=True, hxl_update=False, **kwargs)
+    dataset.create_in_hdx(remove_additional_resources=True, **kwargs)
     showcase.create_in_hdx()
     showcase.add_dataset(dataset)
 
